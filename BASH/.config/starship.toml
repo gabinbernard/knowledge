@@ -1,0 +1,41 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+
+# format = '''
+# [--------------------------------------------------------------](bold bright-black)
+# $all
+# '''
+
+format = '''
+[--------------------------------------------------------------](bold bright-black)
+[>>> ](bright-black)$battery$directory$git_branch[\$ ](bold white)
+'''
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[\$](bold bright-black)' 
+
+[directory]
+style = "bold bright-yellow"
+truncate_to_repo = false
+before_repo_root_style = "bold bright-red"
+repo_root_style = "bold bright-red"
+truncation_length = 8
+format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'bold bright-red'
+
+[battery]
+format = '[\[](bold bright-black)[$percentage]($style)[\]](bold bright-black) '
+[[battery.display]]
+threshold = 100
+style = 'bold white'
