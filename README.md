@@ -15,7 +15,9 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
     - [`.bashrc`](./BASH/.bashrc) - *My .bashrc configuration*
     - [`.bash_aliases`](./BASH/.bash_aliases) - *My bash aliases*
 - [`CSS`](./CSS/)
+    - [`css.md`](./CSS/css.md)
     - [`font.md`](./CSS/font.md)
+    - [`text.md`](./CSS/text.md)
 - [`GIT`](./GIT) 
     - [`.gitconfig`](./GIT/.gitconfig) - *Helpful git configuration*
     - [`git.md`](./GIT/git.md) - *General and useful git commands*

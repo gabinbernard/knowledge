@@ -39,7 +39,7 @@ font-size: <absolute-value> | <relative-value> | <length> | <percentage> | <math
 ```
 
 **ABSOLUTE SIZE KEYWORDS**
-- xx-small: 60M of medium
+- xx-small: 60% of medium
 - x-small: 75% of medium
 - small: 89% of medium
 - medim : 100% of medium
