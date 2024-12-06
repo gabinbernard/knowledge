@@ -12,6 +12,8 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
 - [`GIT`](./GIT) 
     - [`.gitconfig`](./GIT/.gitconfig) - *Helpful git configuration*
     - [`git.md`](./GIT/git.md) - *General and useful git commands*
+- [`JS`](./JS)
+    - [`yup.ts`](./JS/yup.ts) - *Yup validation library*
 - [`PHP`](./PHP) 
     - [`json.php`](./PHP/json.php) - *JSON related commands, JsonSterializable interface*
     - [`password_hashing.php`](./PHP/password_hashing.php) - *Password hashing functions and constants*
