@@ -19,9 +19,17 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
 - [`JS`](./JS)
     - [`yup.ts`](./JS/yup.ts) - *Yup validation library*
 - [`PHP`](./PHP) 
+    - [`PSR`](./PHP/PSR/) - *PSR - PHP Standard Recommandations*
+        - [`psr0.md`](./PHP/PSR/psr0.md) - *PSR 0 - Autoloading Standard*
+        - [`psr1.md`](./PHP/PSR/psr1.md) - *PSR 1 - Basic Coding Standards*
+        - [`psr2.md`](./PHP/PSR/psr2.md) - *PSR 2 - Coding Style Guide*
+        - [`psr3.md`](./PHP/PSR/psr3.md) - *PSR 3 - Logger Interface*
+        - [`psr4.md`](./PHP/PSR/psr4.md) - *PSR 4 - Autoloading Standard*
+        - [`psr5.md`](./PHP/PSR/psr5.md) - *PSR 5 - PHPDoc Standard*
+        - [`psr6.md`](./PHP/PSR/psr6.md) - *PSR 6 - Caching Interface*
     - [`json.php`](./PHP/json.php) - *JSON related commands, JsonSterializable interface*
     - [`password_hashing.php`](./PHP/password_hashing.php) - *Password hashing functions and constants*
-    - ["pcre.php"](./PHP/pcre.php) - *Perl Compatible Regular Expressions*
+    - [`pcre.php`](./PHP/pcre.php) - *Perl Compatible Regular Expressions*
     - [`printing.php`](./PHP/printing.php) - *Printing functions and formatting*
     - [`psr.md`](./PHP/psr.md) - *PHP Standard Recommandations*
     - [`random.php`](./PHP/random.php) - *Random core extension, Mersenne Twister implementation*
