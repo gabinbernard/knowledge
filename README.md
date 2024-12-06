@@ -8,7 +8,11 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
 ## Table of contents
 
 - [`BASH`](./BASH/)
+    - [`.config`](./BASH/.config)
+        - [`starship.toml`](./BASH/.config/starship.toml) *My starship configuration*
     - [`.bashrc`](./BASH/.bashrc) - *My .bashrc configuration*
+    - [`.bash_aliases`](./BASH/.bash_aliases) - *My bash aliases*
+
 - [`GIT`](./GIT) 
     - [`.gitconfig`](./GIT/.gitconfig) - *Helpful git configuration*
     - [`git.md`](./GIT/git.md) - *General and useful git commands*
