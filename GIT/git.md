@@ -60,3 +60,9 @@ Show current branch's commit history \
 `git reflog` - Show history of changes made to your repo's HEAD pointer
 
 `git show [SHA]` - Show any object in human readable format
+
+## Remote
+
+`git remote -v` - List remote repositories
+
+`git remote add/remove [name] [url]` - Add or remove remote repository

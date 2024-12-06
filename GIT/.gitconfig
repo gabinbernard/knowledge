@@ -1,14 +1,30 @@
-# Nice and helpful git config
+[user]
+        name = Your name
+        email = email@example.com
+
+[core]
+        editor = vim
+        pager = delta
+
+[init]
+        defaultBranch = main
+
+[interactive]
+        diffFilter = delta --color-only
+
+[merge]
+        conflictstyle = diff3
+
+[diff]
+        colorMoved = default
+
+[delta]
+        line-numbers = true
+        plus-style = "#a0f0a0" bold "#204020"
+        minus-style = "#f0a0a0" bold "#402020"
 
 [alias]
-    # List aliases
-    aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
-    # Pretty git log trees
-    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
-    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-[core]
-    # Change default editor to vim (for git commit --amend for example)
-    editor = vim
-[push]
-    # Only current branch should be pushed
-    default = upstream
+        aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
+        st = status -sb
+        lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold brightred)%h%C(reset) - %C(bold brightyellow)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+        lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold brightred)%h%C(reset) - %C(bold brightyellow)%aD%C(reset) %C(bold brightblack)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
