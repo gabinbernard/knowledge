@@ -1,5 +1,7 @@
 # Misc
 
+[‹ Back to Properties](./properties.md)
+
 ## Style origins
 
 - User-agent origin (*default web browser style*)

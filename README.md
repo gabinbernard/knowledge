@@ -16,13 +16,14 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
     - [`.bash_aliases`](./BASH/.bash_aliases) - *My bash aliases*
 - [`CSS`](./CSS/)
     - [`css.md`](./CSS/css.md)
-    - [`properties.md`](./CSS/properties.md)
-        - [`font.md`](./CSS/font.md)
-        - [`misc.md`](./CSS/misc.md)
-        - [`table.md`](./CSS/table.md)
-        - [`text.md`](./CSS/text.md)
-    - [`selectors.md`](./CSS/selectors.md)
-    - [`variables.md`](./CSS/variables.md)
+        - [`properties.md`](./CSS/properties.md)
+            - [`font.md`](./CSS/font.md)
+            - [`image.md`](./CSS/image.md)
+            - [`misc.md`](./CSS/misc.md)
+            - [`table.md`](./CSS/table.md)
+            - [`text.md`](./CSS/text.md)
+        - [`selectors.md`](./CSS/selectors.md)
+        - [`variables.md`](./CSS/variables.md)
 - [`GIT`](./GIT) 
     - [`.gitconfig`](./GIT/.gitconfig) - *Helpful git configuration*
     - [`git.md`](./GIT/git.md) - *General and useful git commands*

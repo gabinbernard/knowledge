@@ -1,4 +1,4 @@
-# CSS Properties
+# CSS Properties (39)
 
 [‹ Back to CSS](./css.md)
 
@@ -36,9 +36,13 @@
 - font-weight
 - line-height
 
-## [Misc](./misc.md) (1)
+## [Image](./image.md) (5)
 
-- all
+- image-rendering
+- image-resolution
+- image-orientation
+- object-fit
+- object-position
 
 ## [Table](./table.md) (5)
 
@@ -47,3 +51,7 @@
 - empty-cells
 - caption-side
 - table-layout
+
+## [Misc](./misc.md) (1)
+
+- all
