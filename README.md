@@ -37,4 +37,6 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
     - [`super_globals.php`](./PHP/super_globals.php) - *PHP Superglobals*
     - [`whats-new-in`](./PHP/whats-new) 
         - [`php_8_3.php`](./PHP/whats-new-in/php_8_3.php) - *What's new in PHP 8.3*
+- [`SQL`](./SQL)
+    - [`sqlite.md`](./SQL/sqlite.md) - *Full SQLITE cheatsheet*
 - [`README.md`](./README.md) 
