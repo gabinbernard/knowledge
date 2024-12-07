@@ -1,6 +1,29 @@
-# CSS Properties (39)
+# CSS Properties (76)
 
 [‹ Back to CSS](./css.md)
+
+## [CSS Box Model](./box-model.md) (30)
+
+- box-sizing
+- padding[ -top | -right | -bottom | -left ]
+- padding-block[ -start | -end ]
+- padding-inline[ -start | -end ]
+- margin[ -top | -right | -bottom | -left ]
+- margin-block[ -start | -end ]
+- margin-inline[ -start | -end ]
+- margin-trim
+- [ min- | max- ]height
+- [ min- | max- ]width
+
+## [Overflow](./overflow.md) (7)
+
+- overflow
+- overflow-block
+- overflow-clip-margin
+- overflow-inline
+- overflow-x
+- overflow-y
+- text-overflow
 
 ## [Text](./text.md) (20)
 
