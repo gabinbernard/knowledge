@@ -14,7 +14,7 @@ const userSchema = object({
         otherwise: (schema) => schema.notRequired().nullable(),
     })
 })
-type User = InferType<userSchema>;
+type User = InferType<typeof userSchema>;
 
 const users: User[] = [
     {
