@@ -1,6 +1,9 @@
-# CSS
+# CSS - Cascading Style Sheet
 
-[‹ Back to README](../README.md)
+*[Home](../README.md)* &nbsp; › &nbsp; 
+*CSS*
+
+---
 
 - [Properties](./properties.md)
 - [Selectors](./selectors.md)

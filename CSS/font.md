@@ -1,6 +1,11 @@
 # Font
 
-[‹ Back to Properties](./properties.md)
+*[Home](../README.md)* &nbsp; › &nbsp;
+*[CSS](./css.md)* &nbsp; › &nbsp;
+*[Properties](./properties.md)* &nbsp; › &nbsp;
+*Font*
+
+---
 
 ```css
 font: <system-family-name> | [<font-stretch>] [<font-variant>] [<font-style>] [<font-weight>] <font-size>/[<line-height>] <font-family>
