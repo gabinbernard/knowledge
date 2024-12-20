@@ -1,5 +1,10 @@
 # Git
 
+*[Home](../README.md)* &nbsp; › &nbsp; 
+*Git*
+
+---
+
 ## Config 
 
 `git config --global user.name "[firstname] [lastname]"` Set author name
