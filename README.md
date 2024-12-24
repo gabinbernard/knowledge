@@ -18,6 +18,7 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
     - [`css.md`](./CSS/css.md)
     - [`font.md`](./CSS/font.md)
     - [`selectors.md`](./CSS/selectors.md)
+    - [`table.md`](./CSS/table.md)
     - [`text.md`](./CSS/text.md)
 - [`GIT`](./GIT) 
     - [`.gitconfig`](./GIT/.gitconfig) - *Helpful git configuration*
