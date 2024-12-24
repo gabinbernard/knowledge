@@ -11,6 +11,7 @@
 - [`JS`](./JS/js.md)
 - [`PERL`](./PERL/perl.md)
 - [`PHP`](./PHP/php.md) 
+- [`SQL`](./SQL/sql.md) 
 
 ## What's that repo?
 

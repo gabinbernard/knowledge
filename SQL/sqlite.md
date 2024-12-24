@@ -1,5 +1,11 @@
 # SQLITE
 
+*[Home](../README.md)* &nbsp; › &nbsp; 
+*[SQL](./sql.md)* &nbsp; › &nbsp; 
+*SQLite*
+
+---
+
 ## Storage classes
 
 A single storage class (in memory) can represent different data types (on disk):
