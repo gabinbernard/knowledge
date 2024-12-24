@@ -1,6 +1,10 @@
 # CSS Selectors
  
-[‹ Back to CSS](./css.md)
+*[Home](../README.md)* &nbsp; › &nbsp;
+*[CSS](./css.md)* &nbsp; › &nbsp;
+*Selectors*
+
+---
 
 ## Common selectors
 

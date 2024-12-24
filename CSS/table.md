@@ -1,6 +1,11 @@
 # Table
 
-[‹ Back to Properties](./properties.md)
+*[Home](../README.md)* &nbsp; › &nbsp;
+*[CSS](./css.md)* &nbsp; › &nbsp;
+*[Properties](./properties.md)* &nbsp; › &nbsp;
+*Table*
+
+---
 
 ## border-collapse
 
