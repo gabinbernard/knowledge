@@ -14,16 +14,17 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
         - [`starship.toml`](./BASH/.config/starship.toml) *My starship configuration*
     - [`.bashrc`](./BASH/.bashrc) - *My .bashrc configuration*
     - [`.bash_aliases`](./BASH/.bash_aliases) - *My bash aliases*
-- [`CSS`](./CSS/)
-    - [`css.md`](./CSS/css.md)
-        - [`properties.md`](./CSS/properties.md)
-            - [`font.md`](./CSS/font.md)
-            - [`image.md`](./CSS/image.md)
-            - [`misc.md`](./CSS/misc.md)
-            - [`table.md`](./CSS/table.md)
-            - [`text.md`](./CSS/text.md)
-        - [`selectors.md`](./CSS/selectors.md)
-        - [`variables.md`](./CSS/variables.md)
+- [`CSS`](./CSS/css.md)
+    - [`Properties`](./CSS/properties.md)
+        - [`Box Model`](./CSS/box-model.md)
+        - [`Font`](./CSS/font.md)
+        - [`Image`](./CSS/image.md)
+        - [`Misc`](./CSS/misc.md)
+        - [`Overflow`](./CSS/overflow.md)
+        - [`Table`](./CSS/table.md)
+        - [`Text`](./CSS/text.md)
+    - [`Selectors`](./CSS/selectors.md)
+    - [`Variables`](./CSS/variables.md)
 - [`GIT`](./GIT) 
     - [`.gitconfig`](./GIT/.gitconfig) - *Helpful git configuration*
     - [`git.md`](./GIT/git.md) - *General and useful git commands*
