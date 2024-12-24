@@ -1,5 +1,7 @@
 # Table
 
+[‹ Back to Properties](./properties.md)
+
 ## border-collapse
 
 ```css

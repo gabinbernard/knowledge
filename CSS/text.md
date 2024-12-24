@@ -1,5 +1,7 @@
 # Text
 
+[‹ Back to Properties](./properties.md)
+
 ## text-transform
 
 ```css

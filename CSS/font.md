@@ -1,5 +1,7 @@
 # Font
 
+[‹ Back to Properties](./properties.md)
+
 ```css
 font: <system-family-name> | [<font-stretch>] [<font-variant>] [<font-style>] [<font-weight>] <font-size>/[<line-height>] <font-family>
 ```
