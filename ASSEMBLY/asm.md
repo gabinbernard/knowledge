@@ -1,6 +1,5 @@
 # Assembly
 
-
 ## Instructions
 
 ### Data movement
@@ -65,14 +64,14 @@
 - LODS - Load string data into a register
 - STOS - Store string data from a register
 
-
 ## Registers
 
 - RAX, EAX, AX, AL, AH (Accumulator) - Arithmetic operations
 - RBX, EBX, BX, BL, BH (Base) - Base pointer for addressing memory
 - RCX, ECX, CX, CL, CH (Counter) - Loop counters and string manipulation
 - RDX, EDX, DX, DL, DH (Data) - Data storage during manipulations, I/O
-- RSI (Source Index) - Pointer for source operand in string manipulation
-- RDI (Destination Index) - Pointer to destination operand in string manimulation
-- RBP (Base pointer) - Stable reference point for function parameters and local variables
-- RSP (Stack pointer) - Points to the top of the stack (automatically adjusted)
+- RSI, ESI, SI, SIL (Source Index) - Pointer for source operand in string manipulation
+- RDI, EDI, DI, DIL (Destination Index) - Pointer to destination operand in string manimulation
+- RBP, EBP, BP, BPL (Base pointer) - Stable reference point for function parameters and local variables
+- RSP, ESP, SP, SPL (Stack pointer) - Points to the top of the stack (automatically adjusted)
+- R8~R15, R*D, R*W, R*L - Other registers (64 bits only)
