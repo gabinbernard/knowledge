@@ -1,11 +1,8 @@
 # Knowledge
 
-Various web development skills that I'd like to review on a regular basis, including programming languages, frameworks, libraries, databases, tools, and more theoretical stuff like mathematics, algorithms, data structures, software architecture, and so on.
+*Home*
 
-The main goal for me is to constantly learn more advanced knowledge in order to become a senior web developer as soon as possible and to constantly reach a higher level of expertise in a wide range of subjects.
-
-
-## Table of contents
+---
 
 - [`ASSEMBLY`](./ASSEMBLY/)
     - [`asm.md`](./ASSEMBLY/asm.md) *Basic x86_64 assembly*
@@ -43,3 +40,9 @@ The main goal for me is to constantly learn more advanced knowledge in order to 
     - [`whats-new-in`](./PHP/whats-new) 
         - [`php_8_3.php`](./PHP/whats-new-in/php_8_3.php) - *What's new in PHP 8.3*
 - [`README.md`](./README.md) 
+
+## What's that repo?
+
+This is a personal reposity where I gather knowledge I'd like to review on a regular basis.
+
+My main goal is to constantly learn more advanced knowledge in order to become a senior web developer as soon as possible and to constantly reach a higher level of expertise in a wide range of subjects.
