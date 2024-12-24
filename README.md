@@ -8,6 +8,7 @@
 - [`BASH`](./BASH/bash.md)
 - [`CSS`](./CSS/css.md)
 - [`GIT`](./GIT/git.md) 
+- [`GRAPHICS`](./GRAPHICS/graphics.md) 
 - [`JS`](./JS/js.md)
 - [`PERL`](./PERL/perl.md)
 - [`PHP`](./PHP/php.md) 
