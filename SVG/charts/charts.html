@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./charts.css" />
+</head>
+<body>
+    <div id="line-chart"></div>
+</body>
+<script type="module">
+import { createLineChart } from './charts.js'
+
+const wrapper = document.getElementById("line-chart");
+
+const data = {
+    xLabel: "Year",
+    yLabel: "Population",
+    xData: [ 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997 ],
+    yData: [ 2_000_000, 3_000_000, 3_200_200, 4_500_000, 8_000_000, 7_800_000, 5_000_000, 8_000_000 ],
+}
+
+const options = {
+    width: 1000,
+    height: 600,
+    fontSize: 16,
+    color: "#dd2222",
+}
+
+createLineChart(wrapper, data, options);
+</script>
+</html>

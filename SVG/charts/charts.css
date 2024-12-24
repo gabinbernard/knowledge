@@ -1,0 +1,17 @@
+.chart {
+    --chart-color: #dd2222;
+    --chart-color-hover: #ee6666;
+    --chart-color-outline: #dd222222;
+}
+
+.chart__bar {
+    cursor: pointer;
+    transition: 0.5s;
+    transform-origin: center;
+    stroke-width: 0;
+}
+
+.chart__bar:hover {
+    fill: var(--chart-color-hover);
+    stroke-width: 20;
+}

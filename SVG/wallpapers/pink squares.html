@@ -1,0 +1,81 @@
+<style>
+svg {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    width: 100vw;
+    height: 100vw;
+    transform: translate(-50%, -50%);
+}
+svg * { transform-box: fill-box; }
+
+.bg__square-pattern {
+    animation: bg__square-pattern 8s linear infinite;
+    transform-origin: 50% 50%;
+}
+@keyframes bg__square-pattern {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5%); }
+}
+
+.bg__square-wrapper {
+    animation: bg__square-wrapper 4s ease-in-out infinite;
+    transform-origin: 100px 100px;
+}
+@keyframes bg__square-wrapper {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(0.6); }
+    50% { transform: rotate(90deg) scale(1); }
+    75% { transform: rotate(180deg) scale(0.6); }
+    100% { transform: rotate(180deg) scale(1); }
+}
+
+.bg__square { animation: bg__square 4s ease-in-out infinite; }
+.bg__square--1 { transform-origin: 50px 50px; }
+.bg__square--2 { transform-origin: 150px 150px; }
+@keyframes bg__square {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(135deg); }
+    100% { transform: rotate(270deg); }
+}
+
+.bg__light { mix-blend-mode: color-dodge; }
+.bg__squares { mix-blend-mode: color-dodge; }
+</style>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+    <defs>
+        <radialGradient id="vignette">
+            <stop offset="25%" stop-color="#00000000" />
+            <stop offset="100%" stop-color="#00000060" />
+        </radialGradient>
+        <linearGradient id="light" gradientTransform="rotate(75)">
+            <stop offset="10%" stop-color="#0aa"></stop>
+            <stop offset="60%" stop-color="#024"></stop>
+            <stop offset="100%" stop-color="#0000"></stop>                
+        </linearGradient>
+        <linearGradient id="background" gradientTransform="rotate(120)">
+            <stop offset="0%" stop-color="#a45" />
+            <stop offset="100%" stop-color="#528" />
+        </linearGradient>
+        <pattern 
+            class="bg__square-pattern"
+            preserveAspectRatio="none" 
+            id="pattern" 
+            viewBox="0,0,200,200" 
+            width="0.05" height="0.05"
+        >
+            <g class="bg__square-wrapper">
+                <rect class="bg__square bg__square--1" x="10" y="10" width="80" height="80" fill="#404040" />
+            </g>
+            <g class="bg__square-wrapper">
+                <rect class="bg__square bg__square--2" x="110" y="110" width="80" height="80" fill="#404040" />
+            </g>
+        </pattern>
+    </defs>
+    
+    <rect class="bg__background" x="0" y="0" width="100%" height="100%" fill="url(#background)" />
+    <rect class="bg__light" x="0" y="0" width="100%" height="100%" fill="url(#light)" />
+    <rect class="bg__squares" x="0" y="0" width="100vw" height="100vw" fill="url(#pattern)"/> -->
+    <rect class="bg__vignette" x="0" y="0" width="100%" height="100%" fill="url(#vignette)" />
+</svg>   

@@ -12,6 +12,7 @@
 - [`PERL`](./PERL/perl.md)
 - [`PHP`](./PHP/php.md) 
 - [`SQL`](./SQL/sql.md) 
+- [`SVG`](./SVG/svg.md)
 
 ## What's that repo?
 
