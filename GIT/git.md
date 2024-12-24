@@ -5,69 +5,107 @@
 
 ---
 
-## Config 
+## Init, Config and Archive
 
-`git config --global user.name "[firstname] [lastname]"` Set author name
+- `git init` Init new empty repository
+- `git clone <url> [<directory>]` Clone repository
 
-`git config --global user.email "[valid email]"` Set author email
+- `git config --global user.name "<firstname> <lastname>"` Set author name
+- `git config --global user.email "<email>"` Set author email
+- `git config --global credential.helper store` Enable credentials caching
 
-## Init
+- `git archive --format=<format> --output=<file> <commit>` Export archive
 
-`git init` Init new repository
+## Stage and Snapshots
 
-`git clone [url]` Retrieve repository
+- `git add <file>` Stage file
+- `git restore <file>` Restore unstaged file chnages
+- `git restore --staged <file>` Unstage file chnages
+- `git clean { -n | -f | -i }` List | Delete | Interactively delete untracked files
 
-## Stage & snapshot
+- `git status [-s | --short]` See staged files in working directory
+- `git diff [--staged]` Show unstaged changes [or staged changes]
+- `git ls-files` List tracked files
 
-`git add [file]` - Stage file \
-`git reset [file]` - Unstage file, keep changes in working directory \
-`git status` - See staged files in working directory
+- `git mv <path> <new-path>` Move file and stage the move
+- `git rm <path>` Remove file and stage the removal
 
-`git diff` - See what is changed but not staged \
-`git diff --staged` - See what is staged but not committed
+- `git commit [-m <message>]` Commit staged content with message
+- `git commit --amend [-m <message>]` Change last commit's message
+- `git tag <tag>` Add a tag to a commit
+- `git tag -a <tag> -m <message>` Add a tag with a message to a commit
 
-`git commit -m [message]` - Commit staged content with message \
-`git commit --amend` - Change last commit's message on nano \
-`git commit --amend -m [message]` - Change last commit's message \
-`git reset --soft HEAD~1` - Uncommit last commit
+## Branches
 
-`git mv [existing-path] [new-path]` - Move file and stage the move \
-`git rm [file]` - Remove file and stage the removal
+- `git branch` List branches, * next to active branch
+- `git branch <name>` Create new branch
+- `git branch -m [<branch>] <name>` Rename branch (current if no branch provided)
 
-## Branch and merge
+- `git checkout <branch>` Checkout another branch
+- `git checkout -b <name>` Create and chekout new branch
 
-`git branch` - List branches, * next to active branch \
-`git branch [name]` - Create new branch \
-`git branch -m [name]` - Rename current branch \
-`git branch -m [branch] [new name]` - Rename branch
+- `git merge <branch>` Merge specified branch's history into current one
+- `git rebase <branch>` Apply commits of current branch ahead of specified one
+- `git cherry-pick <commit | branch>` Cherry pick single commit or branch
+- `git cherry-pick <commit1> [<commit2>] [...]` Cherry pick multiple commits
+- `git cherry-pick <commit1>..<commit2>` Cherry pick range of commits
+- `git revert <commit>` Create new commit that reverts commit
+- `git reset --soft HEAD~1` Uncommit last commit
 
-`git checkout` - Switch to another branch and check out in working directory \
-`git checkout -b [name]` - Create and chekout new branch
+*Note: To get parent of &lt;commit&gt;, you may use either :*
+- *&lt;commit&gt;^*
+- *&lt;commit&gt;~*
+- *&lt;commit&gt;~1*
 
-`git merge [branch]` - Merge specified branch's history into current one \
-`git rebase [branch]` - Apply commits of current branch ahead of specified one
+## Inspect
 
-## Inspect and compare
+- Show current branch's commit history
+```bash
+git log                                     # All entries
+    [-<N>]                                  # N entries
+    --since=<date> --until=<date>           # Since and until date
+    --author=<author>                       # By author
+    --grep=<regex>                          # Message matches regex
+    [--all-match] [--invert-grep]
+    --follow <file>                         # Commits editing this file
+    --stat [-M]                             # More details [with path changes]
+    --all --decorate --oneline --graph      # Useful log formatting
+    branchB..branchA                        # Commits on branch A, not on branch B
+```
 
-Show current branch's commit history \
-`git log` - All entries \
-`git log -[n]` - N entries \
-`git log --since=[date] --until=[date]` - Since and until date \
-`git log --author=[author] --grep=[regex]` - By author, message matching regex (--all-match, --invert-grep) \
-`git log --follow [file]` - Show commits that changed a specific file \
-`git log --stat` - More detailed info \
-`git log --stat -M` - More info with path change indications \
-`git log --all --decorate --oneline --graph` - Useful log format
-`git log branchB..branchA` - Show commits on branch A that are not on branch B 
+- `git reflog` Show history of changes made to your repo's HEAD pointer
 
-`git diff branchB..branchA` - See the diff of what is in branch A that is not in branch B
+- `git show [SHA]` Show any object in human readable format
 
-`git reflog` - Show history of changes made to your repo's HEAD pointer
+## Find a Bug
 
-`git show [SHA]` - Show any object in human readable format
+- Perform binary search to find out which commit introduced a bug
+```bash
+git bisect start
+git bisect { good | bad } [<commit>]
+```
+
+- Show who last modified a line
+```bash
+git blame
+    -L <start>,<end>                # From <start> to <end> lines
+    --show-name                     # Show full commit hash
+    --since=<date> --until=<date>   # Since and until date
+    --ignore-rev <commit>           # Ignore a commit
+    <file>
+```
 
 ## Remote
 
-`git remote -v` - List remote repositories
+- `git remote [-v]` List remote repos [with more details]
+- `git remote show <remote>` Show detailed informations on remote repo
+- `git remote add <name> <url>` Add remote repo
+- `git remote remove <name>` Remove remote repo
 
-`git remote add/remove [name] [url]` - Add or remove remote repository
+- `git push [<remote> <branch>]` Push local changes [on branch] to remote repo
+- `git push --set-upstream <remote> <branch>` Set default remote branch for push
+- `git push <remote> --delete <branch>` Delete branch from remote repo
+
+- `git remote update` Update refs for remotes
+- `git fetch <remote> <branch>` Fetch branch without merging
+- `git pull [--rebase] <remote> <branch>` Pull and merge [or rebase] branch from remote repo
