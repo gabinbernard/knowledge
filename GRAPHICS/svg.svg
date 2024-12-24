@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+    <rect x="0" y="0" width="200" height="300" fill="#101080" />
+    <rect x="200" y="0" width="200" height="300" fill="#ffffff" />
+    <rect x="400" y="0" width="200" height="300" fill="#801010" />
+
+    <polyline 
+        points="20,20 70,20 20,120 70,120" 
+        stroke="#000000" 
+        stroke-width="20"
+        stroke-linejoin="round"
+        fill="transparent" 
+    />
+</svg>
