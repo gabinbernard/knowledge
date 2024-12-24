@@ -4,7 +4,6 @@
 
 ---
 
-- [`ASSEMBLY`](./ASSEMBLY/asm.md)
 - [`BASH`](./BASH/bash.md)
 - [`CSS`](./CSS/css.md)
 - [`GIT`](./GIT/git.md) 
