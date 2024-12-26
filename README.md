@@ -6,6 +6,7 @@
 
 - [`BASH`](./BASH/bash.md)
 - [`CSS`](./CSS/css.md)
+- [`DESIGN PATTERNS`](./DESIGN-PATTERNS/design-patterns.md)
 - [`GIT`](./GIT/git.md) 
 - [`GRAPHICS`](./GRAPHICS/graphics.md) 
 - [`JS`](./JS/js.md)
