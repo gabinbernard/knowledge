@@ -31,9 +31,16 @@
 - `git rm <path>` Remove file and stage the removal
 
 - `git commit [-m <message>]` Commit staged content with message
-- `git commit --amend [-m <message>]` Change last commit's message
 - `git tag <tag>` Add a tag to a commit
 - `git tag -a <tag> -m <message>` Add a tag with a message to a commit
+
+Modify a commit
+
+```bash
+git commit --amend 
+    [-m <message>]` # Inline message
+    [--no-edit --reset-author] # Reset author
+```
 
 ## Branches
 
