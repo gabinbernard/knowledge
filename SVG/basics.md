@@ -34,13 +34,75 @@
 
 <polygon points="10,10 10,20 20,20 20,10" />
 
-<path
-    d=""
-/>
+<path d="<path>" />
 
 <...
     fill="<color>"
+    fill-rule="<nonzero | evenodd>"
+    fill-opacity="<[0;1] | percentage>"
+
     stroke="<color>"
     stroke-width="<length>"
+    stroke-dasharray="<space separated lengths>"
+    stroke-dahsoffset="<length>"
+    stroke-linecap="<butt | round | square>"
+    stroke-linejoin="<miter | miter-clip | bevel | round | arcs>"
+    stroke-miterlimit="<length>"
+    stroke-opacity="<[0;1] | percentage>"
+
+    clip-path="<none | <url> | [ <basic-shape> || <geometry-box> ]>"
+    clip-rule="<nonzero | evenodd | inherit>"
+/>
+```
+
+## Path
+
+Set point position
+```
+M x  y
+m dx dy
+```
+
+Draw a line (any, horizontal, vertical)
+```
+L x  y
+l dx dy
+H x
+h dx
+V y
+v dy
+```
+
+Close the path
+```
+Z
+z
+```
+
+Bézier Cubic Curve
+```
+C x1 y1, x2 y2, x y
+c dx1 dy1, dx2 dy2, dx dy
+S x2 y2, x y
+s dx2 dy2, dx dy
+```
+
+Bézier Quadratic Curve
+```
+Q x1 y1, x y
+q dx1 dy1, dx dy
+T x y
+t dx dy
+```
+
+## Image
+
+Only JPEG, PNG and SVG must be supported
+```xml
+<image
+    x="<length>" y="<length>"
+    width="<length>" height="<length>"
+    href="<image-url"
+    preserveAspectRatio="none | meet | slice | ..."
 />
 ```
