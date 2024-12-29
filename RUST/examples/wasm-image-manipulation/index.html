@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Channel Image Manipulation</title>
+</head>
+<body>
+    <h1>Upload an Image to Keep Only the Red Channel</h1>
+    <input type="file" id="image-upload" accept="image/*" />
+    <br><br>
+    <img id="input-image" src="" alt="Input Image" width="300" />
+    <br><br>
+    <img id="output-image" src="" alt="Output Image" width="300" />
+    <br><br>
+    
+    <!-- Buttons to export image in different formats -->
+    <button id="export-png">Export as PNG</button>
+    <button id="export-jpeg">Export as JPEG</button>
+    <button id="export-webp">Export as WebP</button>
+
+    <script type="module">
+        import init, { process_image } from './pkg/wasm_image_manipulation.js';
+
+        async function run() {
+            await init();
+
+            const fileInput = document.getElementById('image-upload');
+            const inputImage = document.getElementById('input-image');
+            const outputImage = document.getElementById('output-image');
+
+            let currentImageData = null;
+
+            // Handle file input change
+            fileInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+
+                inputImage.src = URL.createObjectURL(file);
+
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.onload = async function(e) {
+                        const imageData = new Uint8Array(e.target.result);
+                        currentImageData = imageData;
+
+                        // Process the image using the WebAssembly function (keep only red channel)
+                        const outputData = process_image(imageData, 'png'); // Default format is PNG
+                        
+                        // Convert the processed image back to a base64 URL and display it
+                        const processedImageUrl = URL.createObjectURL(new Blob([outputData], { type: 'image/png' }));
+                        outputImage.src = processedImageUrl;
+                    };
+
+                    reader.readAsArrayBuffer(file);
+                }
+            });
+
+            // Export image as PNG
+            document.getElementById('export-png').addEventListener('click', () => {
+                if (currentImageData) {
+                    const outputData = process_image(currentImageData, 'png');
+                    const processedImageUrl = URL.createObjectURL(new Blob([outputData], { type: 'image/png' }));
+                    const a = document.createElement('a');
+                    a.href = processedImageUrl;
+                    a.download = 'output.png';
+                    a.click();
+                }
+            });
+
+            // Export image as JPEG
+            document.getElementById('export-jpeg').addEventListener('click', () => {
+                if (currentImageData) {
+                    const outputData = process_image(currentImageData, 'jpeg');
+                    const processedImageUrl = URL.createObjectURL(new Blob([outputData], { type: 'image/jpeg' }));
+                    const a = document.createElement('a');
+                    a.href = processedImageUrl;
+                    a.download = 'output.jpg';
+                    a.click();
+                }
+            });
+
+            // Export image as WebP
+            document.getElementById('export-webp').addEventListener('click', () => {
+                if (currentImageData) {
+                    const outputData = process_image(currentImageData, 'webp');
+                    const processedImageUrl = URL.createObjectURL(new Blob([outputData], { type: 'image/webp' }));
+                    const a = document.createElement('a');
+                    a.href = processedImageUrl;
+                    a.download = 'output.webp';
+                    a.click();
+                }
+            });
+        }
+
+        run();
+    </script>
+</body>
+</html>
