@@ -57,9 +57,9 @@ function getYLines(maxValue) {
 }
 
 /**
- * Create a line chart.
+ * Create a bar chart
  * 
- * @param {HTMLElement} element - Wrapper element for chart
+ * @param {HTMLElement} wrapper - Wrapper element for chart
  * @param {ChartData} data - The chart data and labels
  * @param {ChartOptions} options - The chart options
  */
@@ -77,12 +77,12 @@ export function createLineChart(wrapper, data, options) {
     const dataMinValue = data.xData.reduce((acc, cur) => Math.min(acc, cur), -Infinity);
     const dataMaxValue = data.yData.reduce((acc, cur) => Math.max(acc, cur), -Infinity);
     
+    const contentWidth = width - fontSize * 8;
     const contentHeight = height - fontSize * 2;
-    const contentWidth = width - fontSize * 2;
-    const contentPaddingX = fontSize * 2 + 1;
+    const contentPaddingX = fontSize * 8 + 1;
     const contentPaddingY = fontSize * 2 + 1;
 
-    const barPadding = 20;
+    const barPadding = width * 0.1 / dataCount;
     const topPadding = fontSize * 2;
     const dataWidth = contentWidth - barPadding * 2;
     const dataHeight = contentHeight - topPadding;
@@ -114,18 +114,19 @@ export function createLineChart(wrapper, data, options) {
 
         const text = createChartElement("text", {
             class: "chart__value chart__value--x",
-            x: 0,
-            y: currentYCoord,
+            x: contentPaddingX - fontSize * 1,
+            y: currentYCoord + fontSize / 2,
+            "text-anchor": "end",
         }, svg);
         text.innerHTML = yLines[yLine];
 
-        const line = createChartElement("line", {
+        createChartElement("line", {
             class: "chart__y-line",
-            x1: contentPaddingX,
+            x1: contentPaddingX + 0.5,
             y1: currentYCoord,
             x2: width,
             y2: currentYCoord,
-            stroke: "#c0c0c0",
+            stroke: "#e0e0e0",
             "stroke-width": 1
         }, svg);
     }
@@ -140,13 +141,27 @@ export function createLineChart(wrapper, data, options) {
 
         text.innerHTML = data.xData[index];
 
+        const barYCoords = contentHeight - (data.yData[index] / dataMaxValue) * dataHeight;
+
+
         const rect = createChartElement("rect", {
             class: "chart__bar",
             x: dataPaddingX + (dataWidth / dataCount) * index + barPadding,
-            y: contentHeight - (data.yData[index] / dataMaxValue) * contentHeight,
+            y: barYCoords,
             width: dataWidth / dataCount - barPadding * 2,
-            height: (data.yData[index] / dataMaxValue) * (height - fontSize * 2) - 0.5,
+            height: contentHeight - barYCoords - 0.5,
             fill: color,
         }, svg);
     }
+}
+
+/**
+ * Create a pie chart
+ * 
+ * @param {HTMLElement} wrapper - Wrapper element for chart
+ * @param {ChartData} data - The chart data and labels
+ * @param {ChartOptions} options - The chart options
+ */
+export function createLineChart(wrapper, data, options) {
+    const { height, width, fontSize, color } = options;
 }

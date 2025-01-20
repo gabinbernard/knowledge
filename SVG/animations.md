@@ -11,7 +11,7 @@
 ```xml
 <animate 
     attributeName="<attr>"
-    values="<semicolor separated values>"
+    values="<semicolon separated values>"
     from ="..." to="..." by="..."
     dur="<clock-value> | media | indefinite"
     repeatCount="<number> | indefinite"
@@ -21,7 +21,7 @@
 ## animateMotion
 
 ```xml
-<animate
+<animateMotion
     dur="<clock-value> | media | indefinite"
     repeatCount="<number> | indefinite"
     path="<path>"

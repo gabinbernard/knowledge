@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="./charts.css" />
 </head>
 <body>
-    <div id="line-chart"></div>
+    <div class="container">
+        <h1>Bar Chart</h1>
+        <div id="line-chart"></div>
+        <h1>Pie Chart</h1>
+        <div id="pie-chart"></div>
+    </div>
 </body>
 <script type="module">
 import { createLineChart } from './charts.js'
@@ -18,16 +23,16 @@ const data = {
     xLabel: "Year",
     yLabel: "Population",
     xData: [ 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997 ],
-    yData: [ 2_000_000, 3_000_000, 3_200_200, 4_500_000, 8_000_000, 7_800_000, 5_000_000, 8_000_000 ],
+    yData: [ 2_000_000, 3_000_000, 3_200_200, 4_500_000, 2_350_000, 1_825_222, 2_000_200, 1_990_000 ],
 }
 
 const options = {
-    width: 1000,
-    height: 600,
-    fontSize: 16,
+    width: 800,
+    height: 400,
+    fontSize: 12,
     color: "#dd2222",
 }
 
 createLineChart(wrapper, data, options);
-</script>
+</script><zz
 </html>

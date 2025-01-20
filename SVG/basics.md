@@ -102,7 +102,7 @@ Only JPEG, PNG and SVG must be supported
 <image
     x="<length>" y="<length>"
     width="<length>" height="<length>"
-    href="<image-url"
+    href="<image-url>"
     preserveAspectRatio="none | meet | slice | ..."
 />
 ```
