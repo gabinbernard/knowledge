@@ -33,9 +33,9 @@ Function f(x) | Derivative f'(x)
 $C$ | $ 0 $
 $ x $ | $ 1 $
 $ x^n $ | $ nx^{n-1} $
-$ \sqrt{x} = x^{1/2} $ | $ \frac{1}{2\sqrt{(x)}} $
+$ \sqrt{x} = x^{1/2} $ | $ \frac{1}{2\sqrt{x}} $
 $ \frac{1}{x} = x^{-1} $ | $ -\frac{1}{x^2} $
-$ e^x $ | $ e^x $$
+$ e^x $ | $ e^x $
 $ \ln(x) $ | $ \frac{1}{x} $
 $ \log_a(x) $ | $ \frac{1}{x\ln(a)} $
 $ \sin(x) $ | $ \cos(x) $

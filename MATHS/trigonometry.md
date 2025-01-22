@@ -12,18 +12,16 @@ Trigonometry has 3 main functions, with an equivalent for the complementary angl
 
 ### Sine (sin) and Cosine (cos)
 ```math
-\sin(x)
-```
-```math
-\cos(x)
+\sin(x) \quad \arcsin(x)
+\quad - \quad
+\cos(x) \quad \arccos(x)
 ```
 
 
 ### Tangent (tan) and Cotangent (cot)
 ```math
-\tan(x)
-```
-```math
+\tan(x) \quad \arctan(x)
+\quad - \quad
 \cot(x)
 ```
 
@@ -31,7 +29,21 @@ Trigonometry has 3 main functions, with an equivalent for the complementary angl
 
 ```math
 \sec(x)
-```
-```math
+\quad - \quad
 \csc(x)
 ```
+
+### Hyperbolic functions
+
+
+**cosh and sinh - Used for catenary objects modeling**
+```math
+\cosh(x) = \frac{e^x + e^{-x}}{2}
+```
+```math
+\sinh(x) = \frac{e^x - e^{-x}}{2}
+```
+
+**tanh - Used as smooth activation function in neural networks**
+```math
+\tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
