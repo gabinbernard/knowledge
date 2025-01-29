@@ -10,18 +10,6 @@
 - `/<index1>,<index2>/_search` - Count across 2 indices
 - `/_search` - Count across all indices
 
-### Query Params
-
-- `?typed_keys` - Return the aggregation type
-- `?size=0` - 0 raw results
-- `?q=Star+Wars` - Search for Star Wars
-- `?q=fields.title:"Star+Wars"` - Search for Star Wars in title
-- `?q=fields.title:"Star+Wars"&_source=fields.title`
-- `?q=fields.title:"Star+Wars"+AND+fields.directors:"George+Lucas"`
-- `?q=fields.title:"Star+Wars"+AND+fields.rating:>8.5`
-- `?q="Indiana+Jones"+AND+NOT+fields.plot:Nazis`
-- `?q=revenge&size=20`
-
 ### Body
 
 **General structure**
@@ -43,7 +31,7 @@
 {
     /* Full-text search */
     "match": { "fields.<field>": "<string>" },
-    /* Math full text */
+    /* Match full phrase in correct order */
     "match_phrase": { "fields.<field>": "<string>" },
     /* Exact match */
     "term": { "fields.<field>": "<string>" },
