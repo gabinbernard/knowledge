@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasterization</title>
+</head>
+
+<style>
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    background: transprent;
+    font: inherit;
+    color: inherit;
+}
+
+:root {
+    --black: hsla(230deg, 20%, 16%);
+    --gray: hsla(230deg, 20%, 92%);
+    --white: hsla(230deg, 20%, 96%);
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100%;
+    font: 700 24px/28px Poppins, sans-serif;
+    letter-spacing: -1px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    padding: 24px;
+}
+
+.title {
+    position: relative;
+    padding-bottom: 20px;
+}
+.title::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 24px;
+    height: 4px;
+    background: white;
+}
+
+.column:nth-child(2n+1) > .block:nth-child(2n) { 
+    background: var(--gray);
+    color: var(--black);
+}
+.column:nth-child(2n+1) > .block:nth-child(2n+1) { 
+    background: var(--black);
+    color: var(--white);
+}
+.column:nth-child(2n) > .block:nth-child(2n) { 
+    background: var(--black);
+    color: var(--white);
+}
+.column:nth-child(2n) > .block:nth-child(2n+1) { 
+    background: var(--white);
+    color: var(--black);
+}
+
+canvas {
+    border-radius: 1vw;
+    width: 20vw;
+    height: 20vw;
+    background: white;
+    image-rendering: pixelated;
+}
+
+
+</style>
+<body>
+    <div class="column">
+      <div class="block">
+            <span class="title">
+                Digital<br />
+                Differencial<br />
+                Analyzer
+            </span>
+        </div>
+        <div class="block">
+            <canvas width="60" height="60" id="dda"></canvas>
+        </div>
+    </div>
+    <div class="column">
+        <div class="block">
+            <canvas width="60" height="60" id="bla"></canvas>
+        </div>
+        <div class="block">
+            <span class="title">
+                Bresenham's<br />
+                Line<br />
+                Algorithm.
+            </span>
+        </div>
+    </div>
+    <div class="column">
+        <div class="block">
+            <span class="title">
+                Midpoint<br />
+                Line<br />
+                Algorithm.
+            </span>
+        </div>
+        <div class="block">
+            <canvas width="60" height="60" id="mla"></canvas>
+        </div>
+    </div>
+    <div class="column">
+        <div class="block">
+            <canvas width="60" height="60" id="mca"></canvas>
+        </div>
+        <div class="block">
+            <span class="title">
+                Midpoint<br />
+                Circle<br />
+                Algorithm.
+            </span>
+        </div>
+    </div>
+</body>
+
+<script>
+const dda = document.getElementById("dda");
+const bla = document.getElementById("bla");
+const mla = document.getElementById("mla");
+const mca = document.getElementById("mca");
+
+function digitalDifferencialAnalyzer(points, x0, y0, x1, y1) {
+    const dx = x1 - x0;
+    const dy = y1 - y0;
+
+    const steps = Math.max(Math.abs(dx), Math.abs(dy));
+
+    const incrementX = dx / steps;
+    const incrementY = dy / steps;
+
+    let x = x0;
+    let y = y0;
+
+    for (let i = 0; i < steps; i++) {
+        points[Math.round(y)][Math.round(x)] = 0;
+        x += incrementX;
+        y += incrementY;
+    }
+}
+
+function bresenhamLineAlgorithm(points, x0, y0, x1, y1) {
+    const dx = Math.abs(x1 - x0);
+    const dy = Math.abs(y1 - y0);
+    const sx = x0 < x1 ? 1 : -1;
+    const sy = y0 < y1 ? 1 : -1;
+    let err = dx - dy;
+
+    while (true) {
+        points[y0][x0] = 0;
+
+        if (x0 === x1 && y0 === y1) break;
+        let err2 = 2 * err;
+
+        if (err2 > -dy) {
+            err -= dy;
+            x0 += sx;
+        }
+
+        if (err2 < dx) {
+            err += dx;
+            y0 += sy;
+        }
+
+    }
+}
+
+function midpointLineAlgorithm(points, x0, y0, x1, y1) {
+    let dx = Math.abs(x1 - x0);
+    let dy = Math.abs(y1 - y0);
+    let sx = x0 < x1 ? 1 : -1;
+    let sy = y0 < y1 ? 1 : -1;
+    
+    let swapped = false;
+    if (dy > dx) {
+        [dx, dy] = [dy, dx];
+        swapped = true;
+    }
+
+    let d = 2 * dy - dx;
+    let x = x0;
+    let y = y0;
+
+    for (let i = 0; i <= dx; i++) {
+        points[y][x] = 0;
+
+        if (d > 0) {
+            if (swapped) {
+                x += sx;
+            } else {
+                y += sy;
+            }
+            d -= 2 * dx;
+        }
+
+        if (swapped) {
+            y += sy;
+        } else {
+            x += sx;
+        }
+
+        d += 2 * dy;
+    }
+}
+
+function midpointCircleAlgorithm(points, cx, cy, r) {
+    let x = 0, y = -r, p = -r;
+
+    while (x < -y) {
+        yMid = y + 0.5;
+
+        if (p > 0) {
+            y += 1;
+            p += 2 * (x + y) + 1;
+        } else {
+            p += 2 * x + 1;
+        }
+
+        points[cy + y][cx + x] = 0;
+        points[cy + y][cx - x] = 0;
+        points[cy - y][cx + x] = 0;
+        points[cy - y][cx - x] = 0;
+
+        points[cy + x][cx + y] = 0;
+        points[cy + x][cx - y] = 0;
+        points[cy - x][cx + y] = 0;
+        points[cy - x][cx - y] = 0;
+        
+        x += 1;
+    }
+}
+
+const linePoints = [
+    [5, 5, 55, 5],
+    [55, 5, 55, 55],
+    [55, 55, 5, 55],
+    [5, 55, 5, 5],
+
+    [5, 5, 55, 55],
+    [5, 5, 44, 55],
+    [5, 5, 33, 55],
+    [5, 5, 22, 55],
+    [5, 5, 11, 55],
+
+    [5, 5, 55, 55],
+    [16, 5, 55, 55],
+    [27, 5, 55, 55],
+    [38, 5, 55, 55],
+    [49, 5, 55, 55],
+];
+
+const circlePoints = [
+    [30, 30, 28],
+    [34, 34, 18],
+    [30, 30, 8],
+];
+
+drawImage(dda, digitalDifferencialAnalyzer, linePoints);
+drawImage(bla, bresenhamLineAlgorithm, linePoints);
+drawImage(mla, midpointLineAlgorithm, linePoints);
+drawImage(mca, midpointCircleAlgorithm, circlePoints);
+
+function drawImage(canvas, func, args) {
+    const ctx = canvas.getContext('2d');
+    const imageData = ctx.createImageData(60, 60);
+
+    let points = Array(60).fill([]).map(v => Array(60).fill(255));
+    for (const argList of args) {
+        func(points, ...argList);
+    }
+    for (let y = 0; y < 60; y++) {
+        for (let x = 0; x < 60; x++) {
+            const index = (y * 60 + x) * 4;
+            const value = points[y][x];
+            imageData.data[index] = value;
+            imageData.data[index + 1] = value;
+            imageData.data[index + 2] = value;
+            imageData.data[index + 3] = 255;
+        }
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+
+}
+
+</script>
+
+</html>
